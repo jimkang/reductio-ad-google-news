@@ -31,6 +31,18 @@ Usage
       }
     }
 
+Tests
+----
+
+- Create a config.js file that looks like this:
+
+    module.exports = {
+      wordnikAPIKey: '<Your Wordnik API key>',
+      testW2vGoogleNewsURL: 'http://your-api-server.com/'
+    };
+
+- Run `make test`.
+
 License
 -------
 

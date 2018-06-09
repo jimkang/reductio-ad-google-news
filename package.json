@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/jimkang/reductio-ad-google-news",
   "devDependencies": {
+    "assert-no-error": "^1.0.0",
+    "iscool": "^1.1.62",
+    "request": "^2.87.0",
+    "tape": "^4.9.1"
   },
   "dependencies": {
     "standard-bail": "^2.0.1"

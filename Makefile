@@ -4,3 +4,6 @@ pushall:
 prettier:
 	prettier --single-quote --write "**/*.js"
 
+test:
+	node tests/reductio-tests.js
+
