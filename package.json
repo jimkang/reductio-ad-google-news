@@ -24,6 +24,13 @@
     "tape": "^4.9.1"
   },
   "dependencies": {
+    "async-waterfall": "^0.1.5",
+    "call-next-tick": "^2.0.1",
+    "d3-queue": "^3.0.7",
+    "lodash.pick": "^4.4.0",
+    "lodash.pluck": "^3.1.2",
+    "lodash.uniq": "^4.5.0",
+    "split-to-words": "^1.0.2",
     "standard-bail": "^2.0.1"
   }
 }

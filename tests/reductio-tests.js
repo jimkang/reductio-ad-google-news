@@ -10,9 +10,7 @@ var testCases = [
     text: 'It was a graveyard smash!',
     considerWordCommonness: true,
     shouldNotError: true,
-    expected: [
-      'monster'
-    ]
+    expected: ['monster']
   }
 ];
 
@@ -25,7 +23,7 @@ function runTest(testCase) {
     var reductio = Reductio({
       request,
       w2vGoogleNewsURL: config.testW2vGoogleNewsURL,
-      wordnikAPIKey: config.wordnikAPIKey, 
+      wordnikAPIKey: config.wordnikAPIKey,
       considerWordCommonness: testCase.considerWordCommonness,
       iscool
     });
@@ -37,7 +35,7 @@ function runTest(testCase) {
       }
       t.deepEqual(results, testCase.expected, 'Results are correct.');
       console.log('results', results);
+      t.end();
     }
   }
 }
-
