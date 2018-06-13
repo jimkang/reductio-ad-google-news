@@ -1,6 +1,6 @@
 {
   "name": "reductio-ad-google-news",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Takes text, then reduces it a small phrase using the Google News word2vec model and Wordnik.",
   "main": "index.js",
   "scripts": {
