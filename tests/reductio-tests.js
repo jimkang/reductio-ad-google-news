@@ -7,10 +7,10 @@ var assertNoError = require('assert-no-error');
 
 var testCases = [
   {
-    text: 'It was a graveyard smash!',
+    text:
+      'Verily I say unto you: the wicked will spit out the riches they swallowed. Their iniquity will turn sour in their stomach.',
     considerWordCommonness: true,
-    shouldNotError: true,
-    expected: ['monster']
+    shouldNotError: true
   }
 ];
 
@@ -27,13 +27,17 @@ function runTest(testCase) {
       considerWordCommonness: testCase.considerWordCommonness,
       iscool
     });
-    reductio('It was a graveyard smash!', checkResults);
+    reductio(testCase.text, checkResults);
 
     function checkResults(error, results) {
       if (testCase.shouldNotError) {
         assertNoError(t.ok, error, 'No error from reductio.');
       }
-      t.deepEqual(results, testCase.expected, 'Results are correct.');
+      t.ok(results.wordFreqDicts);
+      t.ok(results.filteredFreqDicts);
+      t.ok(results.wordDistDicts);
+      t.ok(results.filteredDistDicts);
+      t.ok(results.words);
       console.log('results', results);
       t.end();
     }

@@ -28,4 +28,3 @@ function checkResults(error, results) {
     console.log('results', results);
   }
 }
-

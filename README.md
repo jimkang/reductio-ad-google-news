@@ -21,7 +21,7 @@ Usage
       considerWordCommonness: true, // Default to true
       iscool: <Instance of iscool module or null>
     });
-    reductio('It was a graveyard smash!', logResult);
+    reductio('', logResult);
 
     function logResult(error, results) {
       if (error) {
@@ -30,6 +30,57 @@ Usage
         console.log(results);
       }
     }
+
+Results look like:
+    { wordFreqDicts:
+     [ { word: 'Verily', totalCount: 2 },
+       { word: 'I', totalCount: 78543 },
+       { word: 'say', totalCount: 7503 },
+       { word: 'unto', totalCount: 128 },
+       {},
+       { word: 'the', totalCount: 313899 },
+       { word: 'wicked', totalCount: 72 },
+       { word: 'will', totalCount: 22793 },
+       { word: 'spit', totalCount: 47 },
+       { word: 'out', totalCount: 20458 },
+       { word: 'riches', totalCount: 30 },
+       { word: 'they', totalCount: 23302 },
+       { word: 'swallowed', totalCount: 71 },
+       { word: 'Their', totalCount: 732 },
+       { word: 'iniquity', totalCount: 2 },
+       { word: 'turn', totalCount: 1558 },
+       { word: 'sour', totalCount: 64 },
+       { word: 'in', totalCount: 131861 },
+       { word: 'their', totalCount: 18216 },
+       { word: 'stomach', totalCount: 197 } ],
+    freqGapStdDev: 17.804493814764857,
+    filteredFreqDicts:
+     [ { word: 'Verily', totalCount: 2 },
+       { word: 'iniquity', totalCount: 2 } ],
+    wordDistDicts:
+     [ { word: 'wickedness', distance: 0.8983930945396423 },
+       { word: 'sins', distance: 0.988501787185669 },
+       { word: 'satans', distance: 0.9934936761856079 },
+       { word: 'deceivers', distance: 1.0083870887756348 },
+       { word: 'idolators', distance: 1.0113334655761719 },
+       { word: 'benevolent_deity', distance: 1.0231198072433472 },
+       { word: 'souls', distance: 1.032723307609558 },
+       { word: 'wrathful', distance: 1.033031940460205 },
+       { word: 'evil', distance: 1.0360162258148193 },
+       { word: 'damnation', distance: 1.0423715114593506 },
+       { word: 'evil_doer', distance: 1.0476680994033813 },
+       { word: 'avenging_angels', distance: 1.0504376888275146 } ],
+    distGapStdDev: 0.024475691999558378,
+    filteredDistDicts: [ { word: 'wickedness', distance: 0.8983930945396423 } ],
+    words: [ 'wickedness' ] }
+
+- The `words` property is the final result.
+- `wordFreqDicts` has the frequencies of the words in the given tests.
+- `freqGapStdDev` is the standard deviation of the gaps between a subset of the frequencies.
+- `filteredFreqDicts` is wordFreqDicts minus the words whose frequencies are beyond a "gap" determined by `freqGapStdDev`.
+- `wordDistDicts` has the distances of the closest words to the sum of the words in `filteredFreqDicts`.
+- `distGapStdDev` is the standard deviation of the gap between a subset of the distances.
+- `filteredDistDicts` is `wordDistDicts` without those entries that is beyond a gap determined by `distGapStdDev`.
 
 Tests
 ----
