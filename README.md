@@ -21,7 +21,7 @@ Usage
       considerWordCommonness: true, // Default to true
       iscool: <Instance of iscool module or null>
     });
-    reductio('', logResult);
+    reductio('Verily I say unto you: the wicked will spit out the riches they swallowed. Their iniquity will turn sour in their stomach.', logResult);
 
     function logResult(error, results) {
       if (error) {
