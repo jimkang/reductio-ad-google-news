@@ -32,6 +32,7 @@ Usage
     }
 
 Results look like:
+
     { wordFreqDicts:
      [ { word: 'Verily', totalCount: 2 },
        { word: 'I', totalCount: 78543 },
